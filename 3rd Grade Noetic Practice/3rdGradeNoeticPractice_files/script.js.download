@@ -1,0 +1,160 @@
+
+function showAnswers() {
+  document.QuestionForm.H1.style.display='block';
+  document.QuestionForm.H2.style.display='block';
+  document.QuestionForm.H3.style.display='block';
+  document.QuestionForm.H4.style.display='block';
+  document.QuestionForm.H5.style.display='block';
+  
+ }
+
+function Submit() {
+ var message="";
+ var count=0;
+ var score;
+ var answer="";
+ var problem_count=5;
+
+//check blank answers
+	if (isBlank(document.QuestionForm.T1.value)||isBlank(document.QuestionForm.T2.value)||isBlank(document.QuestionForm.T3.value)||isBlank(document.QuestionForm.T4.value)||
+		isBlank(document.QuestionForm.T5.value)) 
+	{
+			var question=confirm('You have not completed all questions yet. Are you sure you want to submit the test? ');
+			if (!question){
+				return false;	
+		}
+	}
+
+//continue .. 
+ ridallcomma();
+ 
+//check answers and calculate score
+ if (document.QuestionForm.T1.value*1==document.QuestionForm.H1.value){
+		count=count+1;
+		answer=answer+document.QuestionForm.T1.value+";"
+ }
+ else {
+	 document.QuestionForm.H1.style.display='block';
+ }
+ if (document.QuestionForm.T2.value*1==document.QuestionForm.H2.value){
+		count=count+1;
+		answer=answer+document.QuestionForm.T2.value+";"
+
+ }
+ else {
+	 document.QuestionForm.H2.style.display='block';
+ }
+ if (document.QuestionForm.T3.value*1==document.QuestionForm.H3.value){
+		count=count+1;
+		answer=answer+document.QuestionForm.T3.value+";"
+
+ }
+  else {
+	 document.QuestionForm.H3.style.display='block';
+ }
+
+ if (document.QuestionForm.T4.value*1==document.QuestionForm.H4.value){
+		count=count+1;
+ }
+ else {
+	 document.QuestionForm.H4.style.display='block';
+	 answer=answer+document.QuestionForm.T4.value+";"
+
+ }
+
+ if (document.QuestionForm.T5.value*1==document.QuestionForm.H5.value){
+		count=count+1;
+ }
+  else {
+	 document.QuestionForm.H5.style.display='block';
+	 answer=answer+document.QuestionForm.T5.value;
+
+ }
+
+
+
+  score=Math.ceil(count/problem_count * 100) ;
+  document.QuestionForm.score.value=score;
+  document.QuestionForm.answer.value=answer;
+
+  showScore (score);
+  disableForm();
+}
+
+function disableForm(){
+ //hide Submit button
+  document.all.btn_submit.style.display = 'none';
+  document.all.btn_exit.style.display = 'block';
+  //disable input fields, need to figure out later ...
+
+}
+
+function isBlank(entry){
+	if(entry==null ){return true;}
+	for(var i=0;i<entry.length;i++) {
+		if ((entry.charAt(i)!=' ')&&(entry.charAt(i)!="\t")&&(entry.charAt(i)!="\n")&&(entry.charAt(i)!="\r")){return false; }
+		}
+	return true;
+}
+
+
+function ridcomma(entry) {
+   //function to rid , in input
+	comma= ","; // replace this
+	temp = "" + entry; // temporary holder
+
+	while (temp.indexOf(comma)>-1) {
+		pos= temp.indexOf(comma);
+		temp = "" + (temp.substring(0, pos) +  temp.substring((pos + comma.length), temp.length));
+	}
+	return temp;
+}
+
+function ridallcomma(){
+	document.QuestionForm.T1.value = ridcomma(document.QuestionForm.T1.value);
+	document.QuestionForm.T2.value = ridcomma(document.QuestionForm.T2.value);
+	document.QuestionForm.T3.value = ridcomma(document.QuestionForm.T3.value);
+	document.QuestionForm.T4.value = ridcomma(document.QuestionForm.T4.value);
+	document.QuestionForm.T5.value = ridcomma(document.QuestionForm.T5.value);
+}
+
+
+function showScore(score) {
+
+	document.getElementById("score1").innerHTML=score ;
+	document.getElementById("score2").innerHTML=score ;
+	document.getElementById("score3").innerHTML=score ;
+	document.getElementById("score4").innerHTML=score ;
+
+if (score<40 ){
+		document.all.msg_excellent.style.display = 'none';
+		document.all.msg_good.style.display = 'none';
+		document.all.msg_tryagain.style.display = 'block';
+		document.all.msg_excellent2.style.display = 'none';
+		document.all.msg_good2.style.display = 'none';
+		document.all.msg_tryagain2.style.display = 'block';
+
+ }
+  if (score>=40 && score<80  ){
+
+		document.all.msg_excellent.style.display = 'none';
+		document.all.msg_good.style.display = 'block';
+		document.all.msg_tryagain.style.display = 'none';
+		document.all.msg_excellent2.style.display = 'none';
+		document.all.msg_good2.style.display = 'block';
+		document.all.msg_tryagain2.style.display = 'none';
+
+    }
+   if (score>=80 ){
+
+		document.all.msg_excellent.style.display = 'block';
+		document.all.msg_good.style.display = 'none';
+		document.all.msg_tryagain.style.display = 'none';
+		document.all.msg_excellent2.style.display = 'block';
+		document.all.msg_good2.style.display = 'none';
+		document.all.msg_tryagain2.style.display = 'none';
+    }
+
+
+}
+

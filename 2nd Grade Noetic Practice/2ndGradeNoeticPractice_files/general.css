@@ -1,0 +1,195 @@
+A:link { color: #7E587E}
+A:visited { color: #7E587E}
+
+.header{
+   width: 100%;
+   top: 0px;
+   background-color:#E9CFEC;
+   text-align: center;
+   vertical-align: middle;
+   font-size: 32px;
+   color: #7E587E;
+     letter-spacing: 6px;
+   word-spacing: 10px;
+   font-family: Trebuchet MS;
+   font-weight: bold;
+
+}
+.header2{
+    background-color:#E9CFEC;
+   text-align: center;
+   vertical-align: middle;
+   font-size: 16px;
+   color: #7E587E;
+   letter-spacing: 6px;
+   word-spacing: 10px;
+   font-family: Trebuchet MS;
+   font-weight: bold;
+
+}
+
+
+.subHeader
+{
+   height: 24px;
+   width: 100%;
+   margin: 0px;
+   background-color:#7E587E;
+   text-align: center;
+   vertical-align: middle;
+   font-size: 16px;
+   color: #FFFFFF;
+   font-family: Trebuchet MS;
+   font-weight: bold;
+}
+.body
+{
+
+   text-align: center;
+   vertical-align: middle;
+   font-size: 16px;
+   color: #333333;
+   font-family: Trebuchet MS;
+ }
+.main
+{
+
+   text-align: center;
+   vertical-align: middle;
+   font-size: 14px;
+   color: #333333;
+   font-family: Trebuchet MS;
+   font-weight: bold;
+}
+
+.content
+{
+
+   border-style:solid; border-width:0px; text-align: left;
+   vertical-align: middle;
+   font-size: 16px;
+   color: #7E587E;
+   font-family: Trebuchet MS;
+   height:100%;
+ }
+ 
+.Button {
+    background-color : #7E587E;
+    font-family : Arial;
+    color : #FFFFFF;
+    font-weight : bold;
+    border-style : solid;
+    border-width : 2px;
+    border-color: #E9CFEC;
+    cursor: hand;
+    text-align: center;
+    border-radius: 8px;
+    line-height: 1.5;
+}
+
+.SelectedButton {
+    background-color : #7E587E;
+    border-color: #FFFFFF;
+    color : #b9b8f6;
+}
+
+.LargeButton {
+    width: 160px;
+    font-size: 12pt;
+    font-weight : bold;
+    border-color: #E9CFEC;
+    padding: 3px;
+}
+
+.WorksheetButton {
+    background-color : green;
+    font-family : Ariel;
+    color : #FFFFFF;
+    font-weight : bold;
+    border-style : solid;
+    border-width : 2px;
+    border-color: #E9CFEC;
+    cursor: hand;
+    text-align: center;
+    border-radius: 8px;
+    line-height: 1.5;
+}
+
+
+
+.MediumButton {
+    width: 120px;
+    font-size: 10pt;
+    font-weight : bold;
+     border-color: #E9CFEC;
+    padding: 2px;
+}
+.wsOuterTable{
+	
+	border-style:solid; 
+	border-width:2px; 
+	 font-size: 12pt;
+	top:10px;
+	width: 718px; 
+	height:auto;
+	background-color:white; 
+	padding-left: 10px; padding-right:10px; padding-top:1px; padding-bottom:10px; font-family:Comic Sans MS;
+	border-radius: 8px;
+	border-color: gray;
+}
+.SmallButton {
+    width: 40px;
+    font-size: 7pt;
+}
+
+
+.wsMessage{
+
+	display:none;
+	color:#000099;
+	font-style:italic;
+	font-weight:bold
+}
+
+.wsMessageVisible{
+	color:#000099;
+	font-style:italic;
+	font-weight:bold
+}
+
+.wsAnswer{
+	display:none;
+	color:#FF0000; 
+	font-weight:bold
+}
+.wsquestion{
+font-family : Times New Roman;
+font-size:12pt
+}
+.wsnumber{
+font-family : Times New Roman;
+font-size:8pt
+}
+
+.fakelink{
+	cursor: hand;
+}
+
+.errorMessage{
+
+font-family : Arial;
+font-size:10pt; 
+color:#993366; 
+font-style:italic
+}
+
+#pow-popup 
+{
+	height:450px; 
+	width:360px; 
+	border:3px solid #7E587E; 
+	background:	#f1eee2;
+	position:absolute;
+	top:-450px;
+	left:-360px;
+}
